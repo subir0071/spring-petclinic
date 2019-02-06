@@ -3,7 +3,6 @@
 .project
 .idea
 *.iml
-/target
 .sts4-cache/
 .vscode/*
 !.vscode/settings.json

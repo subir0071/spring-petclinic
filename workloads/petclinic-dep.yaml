@@ -33,7 +33,7 @@ spec:
         - "1"
       containers:
       - name: petclinic
-        image: subir0071/pet-clinic:warDeployBranch
+        image: subir0071/pet-clinic:rel-warDeployBranch
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9898

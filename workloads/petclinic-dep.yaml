@@ -34,7 +34,7 @@ spec:
         - "1"
       containers:
       - name: petclinic
-        image: subir0071/pet-clinic:1.2.5
+        image: subir0071/pet-clinic:1.2.7
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080

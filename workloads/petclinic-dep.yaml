@@ -33,14 +33,14 @@ spec:
         - "1"
       containers:
       - name: petclinic
-        image: subir0071/pet-clinic:latest
+        image: subir0071/pet-clinic:1.2.2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9898
           name: http
           protocol: TCP
-        
-        
+
+
         resources:
           limits:
             cpu: 1000m

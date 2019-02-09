@@ -1,0 +1,1 @@
+{"jobID":"e839fe47-40fa-0e6e-7e73-612a43b039ff","spec":{"type":"policy","cause":{"Message":"","User":"jnx \u003ctechguy07@gmail.com\u003e"},"spec":{"demo:deployment/petclinic":{"add":{"tag_all":"glob:1.2.*"},"remove":{}}}},"result":null}

@@ -9,7 +9,8 @@ metadata:
   annotations:
     flux.weave.works/automated: "true"
     #flux.weave.works/tag.init: regexp:^3.*
-    flux.weave.works/tag.petclinic: "semver:~1.2"
+    flux.weave.works/tag.petclinic: "glob:1.2.*"
+    flux.weave.works/tag.init: glob:1.2.*
 spec:
   strategy:
     rollingUpdate:

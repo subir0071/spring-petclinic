@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    run: petclinic
+    app: petclinic
   name: petclinic
   namespace: demo
 spec:
@@ -12,6 +12,6 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    run: petclinic
+    app: petclinic
   sessionAffinity: None
   type: LoadBalancer

@@ -64,7 +64,7 @@ import org.springframework.samples.petclinic.model.Person;
     public List&lt;Specialty&gt; getSpecialties() {
 <span class="fc" id="L65">        List&lt;Specialty&gt; sortedSpecs = new ArrayList&lt;&gt;(getSpecialtiesInternal());</span>
 <span class="fc" id="L66">        PropertyComparator.sort(sortedSpecs,</span>
-                new MutableSortDefinition(&quot;name&quot;, true, true));
+<span class="fc" id="L67">                new MutableSortDefinition(&quot;name&quot;, true, true));</span>
 <span class="fc" id="L68">        return Collections.unmodifiableList(sortedSpecs);</span>
     }
 

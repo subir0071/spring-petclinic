@@ -61,8 +61,8 @@ import org.springframework.samples.petclinic.visit.Visit;
     @JoinColumn(name = &quot;owner_id&quot;)
     private Owner owner;
 
-<span class="fc" id="L64">    @OneToMany(cascade = CascadeType.ALL, mappedBy = &quot;petId&quot;, fetch = FetchType.EAGER)</span>
-    private Set&lt;Visit&gt; visits = new LinkedHashSet&lt;&gt;();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = &quot;petId&quot;, fetch = FetchType.EAGER)
+<span class="fc" id="L65">    private Set&lt;Visit&gt; visits = new LinkedHashSet&lt;&gt;();</span>
 
     public void setBirthDate(LocalDate birthDate) {
 <span class="fc" id="L68">        this.birthDate = birthDate;</span>
@@ -102,7 +102,7 @@ import org.springframework.samples.petclinic.visit.Visit;
     public List&lt;Visit&gt; getVisits() {
 <span class="fc" id="L103">        List&lt;Visit&gt; sortedVisits = new ArrayList&lt;&gt;(getVisitsInternal());</span>
 <span class="fc" id="L104">        PropertyComparator.sort(sortedVisits,</span>
-                new MutableSortDefinition(&quot;date&quot;, false, false));
+<span class="fc" id="L105">                new MutableSortDefinition(&quot;date&quot;, false, false));</span>
 <span class="fc" id="L106">        return Collections.unmodifiableList(sortedVisits);</span>
     }
 

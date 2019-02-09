@@ -99,7 +99,7 @@ import org.springframework.samples.petclinic.model.Person;
     public List&lt;Pet&gt; getPets() {
 <span class="fc" id="L100">        List&lt;Pet&gt; sortedPets = new ArrayList&lt;&gt;(getPetsInternal());</span>
 <span class="fc" id="L101">        PropertyComparator.sort(sortedPets,</span>
-                new MutableSortDefinition(&quot;name&quot;, true, true));
+<span class="fc" id="L102">                new MutableSortDefinition(&quot;name&quot;, true, true));</span>
 <span class="fc" id="L103">        return Collections.unmodifiableList(sortedPets);</span>
     }
 
@@ -136,7 +136,7 @@ import org.springframework.samples.petclinic.model.Person;
 <span class="nc" id="L136">                    return pet;</span>
                 }
             }
-<span class="nc" id="L139">        }</span>
+        }
 <span class="fc" id="L140">        return null;</span>
     }
 

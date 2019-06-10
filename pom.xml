@@ -254,7 +254,7 @@
 					<failOnNoGitDirectory>false</failOnNoGitDirectory>
 				</configuration>
 			</plugin>
-
+<!--
 			<plugin>
 				<groupId>ro.isdc.wro4j</groupId>
 				<artifactId>wro4j-maven-plugin</artifactId>
@@ -282,7 +282,7 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-
+-->
 
 		</plugins>
 	</build>

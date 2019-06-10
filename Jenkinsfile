@@ -12,7 +12,11 @@ pipeline {
   	timeout(time : 30, unit: 'MINUTES')
   }
 
-
+      tools
+	{
+		maven 'MAVEN_HOME'
+		jdk 'JAVA_HOME'
+	}
     
     stages {
     

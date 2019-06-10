@@ -30,7 +30,7 @@ pipeline {
                 echo "maven clean build"
                
                 	
-   		            bat 'mvn clean compile package'   
+   		            sh 'mvn clean compile package'   
                 
             }
         }  
@@ -47,7 +47,7 @@ pipeline {
             steps {
                 
                     
-                    bat 'mvn test'
+                    sh 'mvn test'
                
 	        }
         }
@@ -62,7 +62,7 @@ pipeline {
         
         stage('Tomcat Deploy') {
             steps {
-               bat returnStatus: true, script: 'copy .\\target\\petclinic.war D:\\Prog_Files\\Tomcat\\apache-tomcat-8.5.34\\webapps\\'
+               sh returnStatus: true, script: 'copy .\\target\\petclinic.war D:\\Prog_Files\\Tomcat\\apache-tomcat-8.5.34\\webapps\\'
             }
         }
 

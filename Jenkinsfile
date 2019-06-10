@@ -23,7 +23,7 @@ pipeline {
         stage('build') {
             steps {
                   deleteDir()
-		          git(url: 'https://github.com/subir0071/spring-petclinic.git', branch: 'warDeployBranch', credentialsId: '')
+		          git(url: 'https://github.com/subir0071/spring-petclinic.git', branch: 'master', credentialsId: '')
 
             }
         }

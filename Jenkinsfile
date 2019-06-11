@@ -42,7 +42,7 @@ pipeline {
         stage('SCA_Sonar') {
             steps {
                     
-   		            bat 'mvn sonar:sonar -Dsonar.host.url=http://http://52.172.195.61:9000/'
+   		            sh 'mvn sonar:sonar -Dsonar.host.url=http://http://52.172.195.61:9000/'
             }
         }
         

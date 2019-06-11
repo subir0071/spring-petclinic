@@ -71,7 +71,7 @@ pipeline {
         
         stage('Tomcat Deploy') {
             steps {
-               sh returnStatus: true, script: 'copy .\\target\\petclinic.war D:\\Prog_Files\\Tomcat\\apache-tomcat-8.5.34\\webapps\\'
+               sh returnStatus: true, script: 'cp ./target/*.war /opt/tomcat/apache-tomcat-9.0.20/webapps'
             }
         }
 

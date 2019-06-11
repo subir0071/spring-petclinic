@@ -63,7 +63,7 @@ pipeline {
             */
          stage('Security Scanning') {
              steps {
-	             sh 'mvn spotbugs:check -X'  //   findbugs:findbugs
+	             sh 'mvn com.github.spotbugs:spotbugs-maven-plugin:3.1.12:check -X'  //   findbugs:findbugs
              }
            }
         

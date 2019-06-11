@@ -40,7 +40,7 @@ pipeline {
                 
             }
         }  
-        /*
+        
         stage('SCA_Sonar') {
             steps {
                     
@@ -62,13 +62,17 @@ pipeline {
                 jacoco(deltaBranchCoverage: '10', deltaClassCoverage: '10', deltaComplexityCoverage: '10', deltaInstructionCoverage: '10', deltaLineCoverage: '10', deltaMethodCoverage: '20')
             }
         }
-            */
+            
          stage('Security Scanning') {
              steps {
 	             sh 'mvn findbugs:findbugs'  //   
              }
            }
-        
+        stage('Build War') {
+             steps {
+	             sh 'mvn war:war -Dmaven.test.skip=true'  //   
+             }
+           }
         stage('Tomcat Deploy') {
             steps {
                sh returnStatus: true, script: 'cp ./target/*.war /opt/tomcat/apache-tomcat-9.0.20/webapps'

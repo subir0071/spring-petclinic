@@ -42,7 +42,7 @@ pipeline {
         stage('SCA_Sonar') {
             steps {
                     
-   		            sh 'mvn sonar:sonar -Dsonar.host.url=http://http://52.172.195.61:9000/'
+   		            sh 'mvn sonar:sonar -Dsonar.host.url=http://52.172.195.61:9000/'
             }
         }
         

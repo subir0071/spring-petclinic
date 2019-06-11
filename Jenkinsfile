@@ -34,19 +34,18 @@ pipeline {
                 echo "maven clean build"
                
                 	
-   		            sh 'mvn clean compile package'   
+   		            sh 'mvn clean compile'   
                 
             }
         }  
-        /*
+        
         stage('SCA_Sonar') {
             steps {
                     
-   		            bat 'mvn sonar:sonar'   
-                //}
+   		            bat 'mvn sonar:sonar -Dsonar.host.url=http://http://52.172.195.61:9000/:9000'
             }
         }
-        */
+        
         stage('Test') {
             steps {
                 

@@ -38,7 +38,7 @@ pipeline {
                 
             }
         }  
-        
+        /*
         stage('SCA_Sonar') {
             steps {
                     
@@ -60,7 +60,7 @@ pipeline {
                 jacoco(deltaBranchCoverage: '10', deltaClassCoverage: '10', deltaComplexityCoverage: '10', deltaInstructionCoverage: '10', deltaLineCoverage: '10', deltaMethodCoverage: '20')
             }
         }
-            
+            */
          stage('Security Scanning') {
              steps {
 	             sh 'mvn spotbugs:check -X'  //   findbugs:findbugs

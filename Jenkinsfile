@@ -76,9 +76,10 @@ pipeline {
            }
         stage('Tomcat Deploy') {
             steps {
+               sh 'rm /opt/tomcat/apache-tomcat-9.0.20/webapps/spring-petclinic-2.1.0.BUILD-SNAPSHOT.war'  
+                sleep 10
                sh returnStatus: true, script: 'cp ./target/*.war /opt/tomcat/apache-tomcat-9.0.20/webapps'
-               sh 'cd /opt/tomcat/apache-tomcat-9.0.20/bin; ./shutdown.sh '
-               sh 'cd /opt/tomcat/apache-tomcat-9.0.20/bin; ./startup.sh'
+               
                sleep 10
             }
         }

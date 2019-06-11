@@ -63,7 +63,7 @@ pipeline {
             
          stage('Security Scanning') {
              steps {
-	             sh 'mvn spotbugs:check'  //   findbugs:findbugs
+	             sh 'mvn spotbugs:check -X'  //   findbugs:findbugs
              }
            }
         

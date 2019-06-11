@@ -164,7 +164,7 @@
                   </goals>
                   <configuration>
                      <testFilesIncluded>
-                        <jMeterTestFile>${JmeterTestFile}.jmx</jMeterTestFile>
+                        <jMeterTestFile>pt_test_case.jmx</jMeterTestFile>
                      </testFilesIncluded>
                      <testResultsTimestamp>false</testResultsTimestamp>
                      <propertiesUser>

@@ -77,8 +77,8 @@ pipeline {
         stage('Tomcat Deploy') {
             steps {
                sh returnStatus: true, script: 'cp ./target/*.war /opt/tomcat/apache-tomcat-9.0.20/webapps'
-               sh '/opt/tomcat/apache-tomcat-9.0.20/shutdown.sh'
-               sh '/opt/tomcat/apache-tomcat-9.0.20/startup.sh'
+               sh 'cd /opt/tomcat/apache-tomcat-9.0.20; ./shutdown.sh '
+               sh 'cd /opt/tomcat/apache-tomcat-9.0.20; ./startup.sh'
                sleep 10
             }
         }

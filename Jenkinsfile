@@ -77,9 +77,16 @@ pipeline {
         stage('Tomcat Deploy') {
             steps {
                sh returnStatus: true, script: 'cp ./target/*.war /opt/tomcat/apache-tomcat-9.0.20/webapps'
+               sh './opt/tomcat/apache-tomcat-9.0.20/shutdown.sh'
+               sh './opt/tomcat/apache-tomcat-9.0.20/startup.sh'
                sleep 10
             }
         }
+          stage('Functional Test') {
+             steps {
+	             sh 'mvn integration-test'  //   
+             }
+           }  
  stage('Jmeter Execution') {
             steps {
               sh 'mvn -DJmeterTestFile=pt_test_case.jmx -DRampUp=10 -DLoopcount=2 -DThreadcount=3 verify'

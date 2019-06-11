@@ -40,7 +40,7 @@ pipeline {
                 
             }
         }  
-        
+        /*
         stage('SCA_Sonar') {
             steps {
                     
@@ -68,6 +68,7 @@ pipeline {
 	             sh 'mvn findbugs:findbugs'  //   
              }
            }
+           */
         stage('Build War') {
              steps {
 	             sh 'mvn war:war -Dmaven.test.skip=true'  //   
@@ -76,9 +77,14 @@ pipeline {
         stage('Tomcat Deploy') {
             steps {
                sh returnStatus: true, script: 'cp ./target/*.war /opt/tomcat/apache-tomcat-9.0.20/webapps'
+               sleep 10
             }
         }
-
+ stage('Jmeter Execution') {
+            steps {
+              sh 'mvn -DJmeterTestFile=Click_link_through -DRampUp=10 -DLoopcount=2 -DThreadcount=3 verify'
+            }
+        }
 
     }
 }

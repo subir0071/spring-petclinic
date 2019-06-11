@@ -82,7 +82,7 @@ pipeline {
         }
  stage('Jmeter Execution') {
             steps {
-              sh 'mvn -DJmeterTestFile=Click_link_through -DRampUp=10 -DLoopcount=2 -DThreadcount=3 verify'
+              sh 'mvn -DJmeterTestFile=pt_test_case.jmx -DRampUp=10 -DLoopcount=2 -DThreadcount=3 verify'
             }
         }
 

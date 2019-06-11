@@ -40,7 +40,7 @@ pipeline {
                 
             }
         }  
-        /*
+        
         stage('SCA_Sonar') {
             steps {
                     
@@ -68,7 +68,7 @@ pipeline {
 	             sh 'mvn findbugs:findbugs'  //   
              }
            }
-           */
+           
         stage('Build War') {
              steps {
 	             sh 'mvn war:war -Dmaven.test.skip=true'  //   

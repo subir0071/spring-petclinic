@@ -42,7 +42,7 @@ pipeline {
         stage('SCA_Sonar') {
             steps {
                     
-   		            bat 'mvn sonar:sonar -Dsonar.host.url=http://http://52.172.195.61:9000/:9000'
+   		            bat 'mvn sonar:sonar -Dsonar.host.url=http://http://52.172.195.61:9000/'
             }
         }
         
@@ -61,10 +61,10 @@ pipeline {
             }
         }
             
-         stage('Security Scanning')
-	   {
-		  sh 'mvn spotbugs:check'  //   findbugs:findbugs
-        
+         stage('Security Scanning') {
+             steps {
+	             sh 'mvn spotbugs:check'  //   findbugs:findbugs
+             }
            }
         
         stage('Tomcat Deploy') {

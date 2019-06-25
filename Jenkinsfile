@@ -40,6 +40,33 @@ pipeline {
                 
             }
         }  
+		
+		stage('parallel') {
+			
+			
+			parallel {
+                stage('Test On Windows') {
+                    agent {
+                        label "master"
+                    }
+                    steps {
+                        sh 'running on master'
+                    }
+                    
+                }
+                stage('Test On Linux') {
+                    agent {
+                        label "linux"
+                    }
+                    steps {
+                        sh 'echo Running on linux'
+                    }
+                    
+                }
+				
+			}
+				
+		}
         
         stage('Test') {
             steps {
@@ -57,36 +84,7 @@ pipeline {
             }
         }
             
-         stage('Security Scanning') {
-             steps {
-	             sh 'mvn findbugs:findbugs'  //   
-             }
-           }
-           
-        stage('Build War') {
-             steps {
-	             sh 'mvn war:war -Dmaven.test.skip=true'  //   
-             }
-           }
-        stage('Tomcat Deploy') {
-            steps {
-               sh 'rm /opt/tomcat/apache-tomcat-9.0.20/webapps/spring-petclinic-2.1.0.BUILD-SNAPSHOT.war'  
-                sleep 10
-               sh returnStatus: true, script: 'cp ./target/*.war /opt/tomcat/apache-tomcat-9.0.20/webapps'
-               
-               sleep 10
-            }
-        }
-          stage('Functional Test') {
-             steps {
-	             sh 'mvn integration-test'  //   
-             }
-           }  
- stage('Jmeter Execution') {
-            steps {
-              sh 'mvn -DJmeterTestFile=pt_test_case.jmx -DRampUp=10 -DLoopcount=2 -DThreadcount=3 verify'
-            }
-        }
+       
 
     }
 }

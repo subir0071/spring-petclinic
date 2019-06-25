@@ -36,7 +36,7 @@ pipeline {
                 echo "maven clean build"
                
                 	
-   		            sh 'mvn clean compile'   
+   		            sh 'mvn clean compile -X'   
                 
             }
         }  

@@ -41,18 +41,12 @@ pipeline {
             }
         }  
         
-        stage('SCA_Sonar') {
-            steps {
-                    
-   		            sh 'mvn sonar:sonar -Dsonar.host.url=http://52.172.195.61:9000/'
-            }
-        }
-        
         stage('Test') {
             steps {
                 
-                    
+                    node {
                     sh 'mvn test'
+				}
                
 	        }
         }

@@ -6,7 +6,7 @@ pipeline {
   	    } 
     }
     environment {
-       JAVA_HOME = '/usr/lib/jvm/java-1.8.0-openjdk-amd64'
+       myEnv_var = 'env Value'
     }
     
     options{
@@ -17,7 +17,7 @@ pipeline {
       tools
 	{
 		maven 'MAVEN_HOME'
-		jdk 'JAVA_HOME'
+		jdk 'java'
 	}
     
     stages {

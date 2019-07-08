@@ -22,7 +22,7 @@ pipeline {
     
     stages {
     
-        stage('build') {
+        stage('code checkout') {
             steps {
                   deleteDir()
 		          git(url: 'https://github.com/subir0071/spring-petclinic.git', branch: 'cumminsDemo', credentialsId: '')
